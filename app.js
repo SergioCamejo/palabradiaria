@@ -1,5 +1,4 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
-
 import {
     getAuth,
     signInWithEmailAndPassword,
@@ -7,7 +6,6 @@ import {
     onAuthStateChanged
 }
 from "https://www.gstatic.com/firebasejs/12.15.0/firebase-auth.js";
-
 const firebaseConfig = {
 
     apiKey: "AIzaSyBTbC_K0OgWqZDRamr2cLIYVtG6Ih7q21E",
@@ -16,73 +14,80 @@ const firebaseConfig = {
     storageBucket: "palabradiaria-d1e95.firebasestorage.app",
     messagingSenderId: "142735832072",
     appId: "1:142735832072:web:1579000a673683f09b4dbd"
-
 };
 
 const app = initializeApp(firebaseConfig);
-
 const auth = getAuth(app);
-
 const login=document.getElementById("login");
-
 const appDiv=document.getElementById("app");
-
 const usuario=document.getElementById("usuario");
-
 const mensaje=document.getElementById("mensaje");
-
 document
 .getElementById("btnLogin")
 .onclick=async()=>{
-
     try{
-
         await signInWithEmailAndPassword(
-
             auth,
-
             email.value,
-
             password.value
-
         );
-
     }
-
     catch(error){
-
         mensaje.innerHTML=error.message;
-
     }
-
 };
-
 document
 .getElementById("btnLogout")
 .onclick=()=>{
-
     signOut(auth);
-
 };
-
 onAuthStateChanged(auth,user=>{
-
     if(user){
-
         login.style.display="none";
-
         appDiv.style.display="block";
-
         usuario.innerHTML="Hola "+user.email;
-
     }
-
     else{
-
         login.style.display="block";
-
         appDiv.style.display="none";
-
     }
-
 });
+// =====================
+// Fecha
+// =====================
+const fecha = document.getElementById("fecha");
+const hoy = new Date();
+fecha.innerHTML =
+    hoy.toLocaleDateString(
+        "es-AR",
+        {
+            weekday:"long",
+            day:"numeric",
+            month:"long",
+            year:"numeric"
+        }
+    );
+// =====================
+// Guardar resultado
+// =====================
+document
+.getElementById("btnGuardar")
+.onclick=()=>{
+    const seleccionado=document.querySelector(
+        "input[name='resultado']:checked"
+    );
+    if(!seleccionado){
+        alert("Elegí un resultado.");
+        return;
+    }
+    const intentos=Number(seleccionado.value);
+    const puntos=intentos===0
+        ?0
+        :7-intentos;
+    document
+    .getElementById("resultadoGuardado")
+    .innerHTML=
+        "✅ Hoy obtuviste "
+        +puntos+
+        " puntos.";
+}
