@@ -1,0 +1,46 @@
+body{
+
+    font-family:Arial;
+
+    background:#f2f2f2;
+
+    text-align:center;
+
+    margin-top:50px;
+
+}
+
+input{
+
+    display:block;
+
+    margin:10px auto;
+
+    padding:10px;
+
+    width:250px;
+
+}
+
+button{
+
+    padding:10px 20px;
+
+    cursor:pointer;
+
+}
+
+#login,
+#app{
+
+    background:white;
+
+    width:350px;
+
+    margin:auto;
+
+    padding:25px;
+
+    border-radius:10px;
+
+}
