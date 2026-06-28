@@ -1,1 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Palabra Diaria</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div id="login">
+
+        <h1>Palabra Diaria</h1>
+
+        <input
+            id="email"
+            type="email"
+            placeholder="Correo">
+
+        <input
+            id="password"
+            type="password"
+            placeholder="Contraseña">
+
+        <button id="btnLogin">
+
+            Ingresar
+
+        </button>
+
+        <p id="mensaje"></p>
+
+    </div>
+
+    <div id="app" style="display:none;">
+
+        <h2 id="usuario"></h2>
+
+        <button id="btnLogout">
+
+            Cerrar sesión
+
+        </button>
+
+    </div>
+
+    <script type="module" src="app.js"></script>
+
+</body>
+
+</html>
