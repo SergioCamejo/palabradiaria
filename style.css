@@ -44,3 +44,37 @@ button{
     border-radius:10px;
 
 }
+
+hr{
+
+    margin:25px 0;
+
+}
+
+#resultados{
+
+    text-align:left;
+
+    display:inline-block;
+
+}
+
+#resultados label{
+
+    display:block;
+
+    margin:8px 0;
+
+    cursor:pointer;
+
+}
+
+#resultadoGuardado{
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    color:green;
+
+}
