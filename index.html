@@ -39,15 +39,45 @@
 
     <div id="app" style="display:none;">
 
-        <h2 id="usuario"></h2>
+    <h2 id="usuario"></h2>
 
-        <button id="btnLogout">
+    <h3 id="fecha"></h3>
 
-            Cerrar sesión
+    <hr>
 
-        </button>
+    <h3>¿Cómo te fue hoy?</h3>
+
+    <div id="resultados">
+
+        <label><input type="radio" name="resultado" value="1"> 🟩 1 intento</label><br>
+        <label><input type="radio" name="resultado" value="2"> 🟦 2 intentos</label><br>
+        <label><input type="radio" name="resultado" value="3"> 🟨 3 intentos</label><br>
+        <label><input type="radio" name="resultado" value="4"> 🟧 4 intentos</label><br>
+        <label><input type="radio" name="resultado" value="5"> 🟥 5 intentos</label><br>
+        <label><input type="radio" name="resultado" value="6"> ⬜ 6 intentos</label><br>
+        <label><input type="radio" name="resultado" value="0"> ⬛ No la resolví</label>
 
     </div>
+
+    <br>
+
+    <button id="btnGuardar">
+
+        Guardar resultado
+
+    </button>
+
+    <p id="resultadoGuardado"></p>
+
+    <hr>
+
+    <button id="btnLogout">
+
+        Cerrar sesión
+
+    </button>
+
+</div>
 
     <script type="module" src="app.js"></script>
 
